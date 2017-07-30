@@ -16,6 +16,7 @@ class ViewController: UIViewController {
         
         let concurrentQueue = DispatchQueue(label: "com.Hercules.asyncQueue", attributes: .concurrent)
         
+        //Looping through
         for counter in 0..<100 {
             concurrentQueue.async {
                 Logger.sharedInstance.log(entry: "Logger called from: \(#file) \(#function) \(#line). Call #\(counter)")
