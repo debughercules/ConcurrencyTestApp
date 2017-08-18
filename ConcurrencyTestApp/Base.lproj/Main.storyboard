@@ -103,7 +103,7 @@
                                     <action selector="actBtnStart:" destination="UKJ-Tu-L52" eventType="touchUpInside" id="Jw8-zQ-hKE"/>
                                 </connections>
                             </button>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="TYd-YO-yoA">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="TYd-YO-yoA">
                                 <rect key="frame" x="14" y="518" width="292" height="31"/>
                                 <connections>
                                     <action selector="actSlideChanged:" destination="UKJ-Tu-L52" eventType="valueChanged" id="LGd-Cu-f2a"/>
@@ -120,7 +120,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="d6P-nE-Z33" firstAttribute="top" secondItem="kPu-4a-rzW" secondAttribute="bottom" constant="52" id="28W-1b-zEP"/>
                             <constraint firstItem="kPu-4a-rzW" firstAttribute="leading" secondItem="BpL-O8-4UJ" secondAttribute="leading" constant="16" id="3z5-g9-Dmz"/>

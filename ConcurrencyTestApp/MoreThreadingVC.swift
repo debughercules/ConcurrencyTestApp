@@ -12,10 +12,10 @@ let imageURLs = ["http://www.planetware.com/photos-large/F/france-paris-eiffel-t
 
 class Downloader {
     
-    class func downloadImageWithURL(_ url:String) -> UIImage! {
+    class func downloadImageWithURL(_ url:String) -> Data {
         
         let data = try? Data(contentsOf: URL(string: url)!)
-        return UIImage(data: data!)
+        return data!
     }
 }
 
@@ -37,20 +37,39 @@ class MoreThreadingVC: UIViewController {
     
     func downloadProcess(){
         
+        let serialQueue = DispatchQueue(label: "com.queue.Serial")
+//        let queueDownloader = DispatchQueue.global(qos: .default)
         
         for (index, element) in self.imgFromInternet.enumerated() {
             
-            actvityDownLoader.isHidden = false
-            actvityDownLoader.startAnimating()
+            var dataImage = Data()
             
-            let queueDownloader = DispatchQueue.global(qos: .default)
-            queueDownloader.async{
-                // Do task in default queue
-                element.image = Downloader.downloadImageWithURL(imageURLs[index])
+            serialQueue.async{
+                // Do task in Background queue
                 
-                DispatchQueue.main.async {
+                if Thread.isMainThread{
+                    print("thread Main: ", index)
+                }else{
+                    print("______________thread Background: ", index)
+                    
+                    DispatchQueue.main.sync {
+                        self.actvityDownLoader.isHidden = false
+                        self.actvityDownLoader.startAnimating()
+                    }
+                    
+                    dataImage = Downloader.downloadImageWithURL(imageURLs[index])
+                }
+                
+                DispatchQueue.main.sync {
                     // Do task in main queue
-                    self.actvityDownLoader.stopAnimating()
+                    
+                    if Thread.isMainThread{
+                        print("thread Main: ", index)
+                        element.image = UIImage(data: dataImage);
+                        self.actvityDownLoader.stopAnimating()
+                    }else{
+                        print("______________thread Background: ", index)
+                    }
                 }
             }
         }
@@ -59,8 +78,11 @@ class MoreThreadingVC: UIViewController {
     @IBAction func actSlideChanged(_ sender: Any) {
         
         let slider = sender as! UISlider
-        self.lblSlideMeter.text = "\(slider.value * 100.0)"
+        self.lblSlideMeter.text = "\(slider.value * 1.0)"
     }
 }
 
+
+
+//Ref https://stackoverflow.com/questions/19822700/difference-between-dispatch-async-and-dispatch-sync-on-serial-queue
 //Ref https://stackoverflow.com/questions/19179358/concurrent-vs-serial-queues-in-gcd/35810608#35810608
