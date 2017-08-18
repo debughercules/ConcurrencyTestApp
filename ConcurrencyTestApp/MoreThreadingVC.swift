@@ -62,3 +62,5 @@ class MoreThreadingVC: UIViewController {
         self.lblSlideMeter.text = "\(slider.value * 100.0)"
     }
 }
+
+//Ref https://stackoverflow.com/questions/19179358/concurrent-vs-serial-queues-in-gcd/35810608#35810608
