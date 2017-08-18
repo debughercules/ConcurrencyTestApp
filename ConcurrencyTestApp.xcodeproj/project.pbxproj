@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E3DC1C11F47832400182C22 /* MoreThreadingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3DC1C01F47832300182C22 /* MoreThreadingVC.swift */; };
 		6E462B251F2E3CEC0081E9C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E462B241F2E3CEC0081E9C0 /* AppDelegate.swift */; };
 		6E462B271F2E3CEC0081E9C0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E462B261F2E3CEC0081E9C0 /* ViewController.swift */; };
 		6E462B2A1F2E3CEC0081E9C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E462B281F2E3CEC0081E9C0 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6E3DC1C01F47832300182C22 /* MoreThreadingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreThreadingVC.swift; sourceTree = "<group>"; };
 		6E462B211F2E3CEB0081E9C0 /* ConcurrencyTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConcurrencyTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E462B241F2E3CEC0081E9C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6E462B261F2E3CEC0081E9C0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 			children = (
 				6E462B241F2E3CEC0081E9C0 /* AppDelegate.swift */,
 				6E462B261F2E3CEC0081E9C0 /* ViewController.swift */,
+				6E3DC1C01F47832300182C22 /* MoreThreadingVC.swift */,
 				6E462B361F2E3F710081E9C0 /* Logger.swift */,
 				6E462B281F2E3CEC0081E9C0 /* Main.storyboard */,
 				6E462B2B1F2E3CEC0081E9C0 /* Assets.xcassets */,
@@ -142,6 +145,7 @@
 			files = (
 				6E462B271F2E3CEC0081E9C0 /* ViewController.swift in Sources */,
 				6E462B371F2E3F710081E9C0 /* Logger.swift in Sources */,
+				6E3DC1C11F47832400182C22 /* MoreThreadingVC.swift in Sources */,
 				6E462B251F2E3CEC0081E9C0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -308,6 +312,7 @@
 				6E462B351F2E3CEC0081E9C0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -18,7 +18,7 @@ class ViewController: UIViewController {
         
         //Looping through
         for counter in 0..<100 {
-            concurrentQueue.async {
+            concurrentQueue.sync {
                 Logger.sharedInstance.log(entry: "Logger called from: \(#file) \(#function) \(#line). Call #\(counter)")
             }
         }
@@ -28,6 +28,13 @@ class ViewController: UIViewController {
         for entry in logs {
             print(entry)
         }
+    }
+    
+    @IBAction func actBtnMoreThreads(_ sender: Any) {
+        
+        self.performSegue(withIdentifier: "iMoreThreadingVC", sender: self)
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
