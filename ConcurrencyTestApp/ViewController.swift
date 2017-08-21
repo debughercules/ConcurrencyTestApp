@@ -14,27 +14,25 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let concurrentQueue = DispatchQueue(label: "com.Hercules.asyncQueue", attributes: .concurrent)
-        
-        //Looping through
-        for counter in 0..<100 {
-            concurrentQueue.sync {
-                Logger.sharedInstance.log(entry: "Logger called from: \(#file) \(#function) \(#line). Call #\(counter)")
-            }
-        }
-        
-        //retriev and print the logs to the console
-        let logs = Logger.sharedInstance.retrieveLogs()
-        for entry in logs {
-            print(entry)
-        }
+//        let concurrentQueue = DispatchQueue(label: "com.Hercules.asyncQueue", attributes: .concurrent)
+//        
+//        //Looping through
+//        for counter in 0..<100 {
+//            concurrentQueue.sync {
+//                Logger.sharedInstance.log(entry: "Logger called from: \(#file) \(#function) \(#line). Call #\(counter)")
+//            }
+//        }
+//        
+//        //retriev and print the logs to the console
+//        let logs = Logger.sharedInstance.retrieveLogs()
+//        for entry in logs {
+//            print(entry)
+//        }
     }
     
     @IBAction func actBtnMoreThreads(_ sender: Any) {
-        
-        self.performSegue(withIdentifier: "iMoreThreadingVC", sender: self)
-        
-        
+        self.performSegue(withIdentifier: "iAPITesterVC", sender: self)
+//        self.performSegue(withIdentifier: "iMoreThreadingVC", sender: self)
     }
 
     override func didReceiveMemoryWarning() {
